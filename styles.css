@@ -1,5 +1,7 @@
-
-header {
-    text-align: center;
-    padding: 1%;
+.image-title {
+    position: absolure;
+    top: 2em;
+    left: 2em;
 }
+    
+

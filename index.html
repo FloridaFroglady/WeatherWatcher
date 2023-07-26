@@ -9,35 +9,32 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
-    <title>Document</title>
+    <title>Weather Watcher</title>
   </head>
-  <body class="teal darken-3">
-    <header class="teal lighten-2 grey-text text-lighten-4">
-       
-      <h1>Weather Watcher</h1>
-    </header>
- 
-    <div class="row">
+   <body class="teal darken-3">
+
+    <div class="image-holder">
+    <img class="responsive-img" src="assets/images/weather.jpg">
+      <h3 class="image-title grey-text text-lighten-4 center-align v-align-wrapper">Weather Watcher</h3>
+    </div>
+
+    <div class="container">
         <form>
             <div class="input-field col s2">
-              <input id="search" type="search" required>
-              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-              <i class="material-icons">close</i>
-            </div>
-          </form>  
+              <input id="searchInput" type="text" placeholder="Enter City">
+          <button class="btn waves-effect waves-light" type="submit" name="action" id="searchBtn">Search
+          </button> 
+        </div>
+      </form> 
+      
+      
+    <div class="card col s10 m9 teal lighten-2" >
+      <div class="card-content" id="currentWeather">This is where current weather will go</div>
+    </div>
+    </div>
 
-    <div class="card col s10 m9 teal lighten-2">
-            <div class="card-content grey-text text-lighten-4 center-align">
-              <span class="card-title">City Name</span>
-              <p>
-               This is where the current weather will go
-              </p>
-            </div>
-          </div>
-
-    
+    <div class ="container">
         <div class="row">
-            <div class="col s1 m2">
               <div class="card teal lighten-2">
                 <div class="card-content grey-text text-darken 4">
                   <span class="card-title grey-text text-lighten-4 center-align">Your Cities</span>
@@ -47,50 +44,21 @@
                 </div>
               </div>
             </div>
+            </div>
+            </div>
           
-
-        <div class="card col s1 m2 teal lighten-2">
-            <div class="card-content grey-text text-lighten-4 center-align">
-              <span class="card-title" id="day1">City Name</span>
-              <p>
-               This is where tomorrow's weather will go
-              </p>
-            </div>
+            <div class = "container">
+           <div class = "row">
+            <ul class="collection">
+              <!-- need to add ids for each day and put data where the day labels are-->
+              <li class="collection-item teal lighten-2">Tomorrow</li>
+              <li class="collection-item teal lighten-2">Day2</li>
+              <li class="collection-item teal lighten-2">Day3</li>
+              <li class="collection-item teal lighten-2">Day4</li>
+              <li class="collection-item teal lighten-2">Day5</li>
+            </ul>
           </div>
-          <div class="card col s1 m2 teal lighten-2">
-            <div class="card-content grey-text text-lighten-4 center-align">
-              <span class="card-title" id="day2">City Name</span>
-              <p>
-               This is where day 2 weather will go
-              </p>
-            </div>
-          </div>
-          <div class="card col s1 m2 teal lighten-2">
-            <div class="card-content grey-text text-lighten-4 center-align">
-              <span class="card-title" id="day3">City Name</span>
-              <p>
-               This is where day 3 weather will go
-              </p>
-            </div>
-          </div>
-          <div class="card col s1 m2 teal lighten-2">
-            <div class="card-content grey-text text-lighten-4 center-align">
-              <span class="card-title" id="day4">City Name</span>
-              <p>
-               This is where day 4 weather will go
-              </p>
-            </div>
-          </div>
-          <div class="card col s1 m2 teal lighten-2">
-            <div class="card-content grey-text text-lighten-4 center-align">
-              <span class="card-title" id="day5">City Name</span>
-              <p>
-               This is where day 5 weather will go
-              </p>
-            </div>
-          </div>
-    </div>
-
+        </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js"></script>
