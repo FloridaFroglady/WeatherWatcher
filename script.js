@@ -23,12 +23,11 @@ function searchWeather(event) {
         const cityLat = data[0].lat;
         const cityLon = data[0].lon;
         console.log(data[0].lat, data[0].lon);
-        document.getElementById("city").textContent = `${data[0].name}, ${data[0].state}`
-        localStorage.setItem("cities", `${data[0].name}, ${data[0].state}`);
-        cityHistory = localStorage.getItem("cities");
-        document.getElementById("yourCities").textContent = cityHistory;
-
-
+        let yourCity = `${data[0].name}, ${data[0].state}`
+        document.getElementById("city").textContent = yourCity; 
+         localStorage.setItem("cities", yourCity);
+         document.getElementById("pastCities").textContent = localStorage.getItem("cities");
+         
         getWeather(cityLat, cityLon);
         
       })
@@ -66,24 +65,26 @@ function searchWeather(event) {
     document.getElementById("icon").innerHTML = `<img src="http://openweathermap.org/img/wn/${conditions.icon}.png"></img>`
     document.getElementById("time").textContent = `${time}`
     document.getElementById("currentWeather").textContent = `${conditions.main} (${conditions.description})`
-    document.getElementById("temp").textContent = `Current temperature: ${weather.temp}`
-    document.getElementById("feel").textContent = `Feels Like: ${weather.feels_like}`
+    document.getElementById("temp").textContent = `Current temperature: ${weather.temp}F`
+    document.getElementById("feel").textContent = `Feels Like: ${weather.feels_like}F`
     document.getElementById("humid").textContent = `Humidity: ${weather.humidity}`
-    document.getElementById("wind").textContent = `Wind: ${data.list[0].wind.speed}mph, Gusting to: ${data.list[0].wind.gust}mph`
+    document.getElementById("wind").textContent = `Wind: ${data.list[0].wind.speed}mph`
 
-    document.getElementById("tomorrow").innerHTML = `${tomTime} ${tomConditions.main} (${tomConditions.description}) ${tomWeather.temp} <img src="http://openweathermap.org/img/wn/${tomConditions.icon}.png"></img>`
+    document.getElementById("tomorrow").innerHTML = `<img src="http://openweathermap.org/img/wn/${tomConditions.icon}.png"></img>  ${tomConditions.main}(${tomConditions.description}) ${tomWeather.temp}F  ${tomTime}`
 
-    document.getElementById("day2").innerHTML = `${day2Time} ${day2Conditions.main} (${day2Conditions.description}) ${day2Weather.temp} <img src="http://openweathermap.org/img/wn/${day2Conditions.icon}.png"></img>`
+    document.getElementById("day2").innerHTML = `<img src="http://openweathermap.org/img/wn/${day2Conditions.icon}.png"></img>${day2Conditions.main} (${day2Conditions.description}) ${day2Weather.temp}F ${day2Time}`
 
-    document.getElementById("day3").innerHTML = `${day3Time} ${day3Conditions.main} (${day3Conditions.description}) ${day3Weather.temp} <img src="http://openweathermap.org/img/wn/${day3Conditions.icon}.png"></img>`
+    document.getElementById("day3").innerHTML = `<img src="http://openweathermap.org/img/wn/${day3Conditions.icon}.png"></img>${day3Conditions.main} (${day3Conditions.description}) ${day3Weather.temp}F ${day3Time}`
 
-    document.getElementById("day4").innerHTML = `${day4Time} ${day4Conditions.main} (${day4Conditions.description}) ${day4Weather.temp} <img src="http://openweathermap.org/img/wn/${day4Conditions.icon}.png"></img>`
+    document.getElementById("day4").innerHTML = `<img src="http://openweathermap.org/img/wn/${day4Conditions.icon}.png"></img>${day4Conditions.main} (${day4Conditions.description}) ${day4Weather.temp}F ${day4Time}`
 
-    document.getElementById("day5").innerHTML = `${day5Time} ${day5Conditions.main} (${day5Conditions.description}) ${day5Weather.temp} <img src="http://openweathermap.org/img/wn/${day5Conditions.icon}.png"></img>`
+    document.getElementById("day5").innerHTML = `<img src="http://openweathermap.org/img/wn/${day5Conditions.icon}.png"></img>${day5Conditions.main} (${day5Conditions.description}) ${day5Weather.temp}F ${day5Time}`
   })
   }
   getCity();
   }
   
   document.getElementById("inputForm").addEventListener("submit", searchWeather);
+  
+  
   
