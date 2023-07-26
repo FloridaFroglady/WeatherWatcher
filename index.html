@@ -14,32 +14,53 @@
    <body class="teal darken-3">
 
     <div class="image-holder">
-    <img class="responsive-img" src="assets/images/weather.jpg">
       <h3 class="image-title grey-text text-lighten-4 center-align v-align-wrapper">Weather Watcher</h3>
+    <img class="responsive-img" src="assets/images/weather.jpg">
+      
     </div>
 
     <div class="container">
-        <form>
-            <div class="input-field col s2">
+        <form id="inputForm">
+          <div class="row">
+            <div class="input-field col s6">
               <input id="searchInput" type="text" placeholder="Enter City">
+            </div>
+            <div class="input-field col offset-6">
+              <input id="stateInput" type="text"
+              placeholder="Enter US State">
+            </div>
+          </div>
           <button class="btn waves-effect waves-light" type="submit" name="action" id="searchBtn">Search
           </button> 
         </div>
       </form> 
       
       
-    <div class="card col s10 m9 teal lighten-2" >
-      <div class="card-content" id="currentWeather">This is where current weather will go</div>
+    <div class="card col s10 m9 teal lighten-2">
+      <div class="card-content">
+        <span id="city"></span>
+        <ul>
+        <li id="icon"></li>
+        <li id="time"></li>
+        <li id="currentWeather"></li> 
+        <li id="temp"></li>
+        <li id="feel"></li>
+        <li id="high"></li>
+        <li id="low"></li>
+        <li id="humid"></li>
+        <li id="wind"></li>
+      </ul>
+      </div>
     </div>
     </div>
 
-    <div class ="container">
+    <div class="container">
         <div class="row">
               <div class="card teal lighten-2">
                 <div class="card-content grey-text text-darken 4">
                   <span class="card-title grey-text text-lighten-4 center-align">Your Cities</span>
                   <ul class="collection">
-                    <li class="collection-item">City Search History goes here</li>
+                    <li class="collection-item" id="yourCities">City Search History goes here</li>
                   </ul>
                 </div>
               </div>
@@ -47,15 +68,15 @@
             </div>
             </div>
           
-            <div class = "container">
-           <div class = "row">
+            <div class="container">
+           <div class="row">
             <ul class="collection">
               <!-- need to add ids for each day and put data where the day labels are-->
-              <li class="collection-item teal lighten-2">Tomorrow</li>
-              <li class="collection-item teal lighten-2">Day2</li>
-              <li class="collection-item teal lighten-2">Day3</li>
-              <li class="collection-item teal lighten-2">Day4</li>
-              <li class="collection-item teal lighten-2">Day5</li>
+              <li class="collection-item teal lighten-2" id="tomorrow">Tomorrow</li>
+              <li class="collection-item teal lighten-2" id="day2">Day2</li>
+              <li class="collection-item teal lighten-2" id="day3">Day3</li>
+              <li class="collection-item teal lighten-2" id="day4">Day4</li>
+              <li class="collection-item teal lighten-2" id="day5">Day5</li>
             </ul>
           </div>
         </div>
